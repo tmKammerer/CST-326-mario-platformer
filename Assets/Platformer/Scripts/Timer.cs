@@ -6,7 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     private float accumilatedTime = 0f;
-    private float totalTime = 360f;
+    private float totalTime = 100f;
     public TextMeshProUGUI timerDisplay;
     // Start is called before the first frame update
     void Start()

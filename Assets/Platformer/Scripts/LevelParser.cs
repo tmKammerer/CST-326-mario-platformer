@@ -9,6 +9,8 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
+    public GameObject waterPrefab;
+    public GameObject goalPrefab;
     public Transform environmentRoot;
 
     // --------------------------------------------------------------------------
@@ -63,6 +65,8 @@ public class LevelParser : MonoBehaviour
                 var brick = Instantiate(brickPrefab);
                 var question = Instantiate(questionBoxPrefab);
                 var stone = Instantiate(stonePrefab);
+                var water = Instantiate(waterPrefab);
+                var goal = Instantiate(goalPrefab);
                 // Todo - Position the new GameObject at the appropriate location by using row and column
                 if(letter== 'x')
                 {
@@ -82,6 +86,14 @@ public class LevelParser : MonoBehaviour
                 {
                     stone.transform.position = new Vector3(column, row, 0f);
                     stone.transform.parent = environmentRoot;
+                }else if (letter == 'w')
+                {
+                    water.transform.position = new Vector3(column, row, 0f);
+                    water.transform.parent = environmentRoot;
+                }else if (letter == 'c')
+                {
+                    goal.transform.position = new Vector3(column, row, 0f);
+                    goal.transform.parent = environmentRoot;
                 }
                 // Todo - Parent the new GameObject under levelRoot
                 column++;
